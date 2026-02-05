@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammed | Cyber Portfolio</title>
+    <!-- Google Fonts: Orbitron for headers, Rajdhani for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="icon" href="logo_1.png" type="image/png">
+</head>
+
+<body>
+    <div class="earth-container"></div>
+    <div class="stars-bg"></div>
+    <!-- Loading Screen -->
+    <div id="loader-wrapper">
+        <div class="loader">
+            <div class="pyramid-loader">
+                <div class="wrapper">
+                    <span class="side side1"></span>
+                    <span class="side side2"></span>
+                    <span class="side side3"></span>
+                    <span class="side side4"></span>
+                    <span class="shadow"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor Containers -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-blur" id="cursor-blur"></div>
+
+    <header>
+        <nav class="glass-nav">
+            <div class="logo">MOHAMMED</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#projects">PROJECTS</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h1 class="glitch-text" data-text="MOHAMMED">MOHAMMED</h1>
+                <p class="tagline"><span id="tagline-text">FULL STACK <span class="highlight">DEVELOPER</span></span>
+                </p>
+                <div class="cta-container">
+                    <a href="#projects" class="cyber-btn">
+                        <span class="btn-content">VIEW WORK</span>
+                        <span class="btn-glitch"></span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mirror/Reflection decorative element -->
+            <div class="mirror-surface"></div>
+        </section>
+
+        <!-- ABOUT SECTION INTEGRATION -->
+        <div id="about" class="parallax-wrapper">
+            <!-- Header Section -->
+            <section class="page-header">
+                <h1 class="glitch-text" data-text="ABOUT ME">ABOUT ME</h1>
+                <p class="subtitle">SYSTEMS • SECURITY • BACKEND</p>
+            </section>
+
+            <!-- Section 1: About Me (Intro Panel) -->
+            <section class="about-section scroll-reveal">
+                <div class="glass-panel profile-panel">
+                    <div class="profile-content">
+                        <h2>WHO I AM</h2>
+                        <ul class="clean-list">
+                            <li>
+                                <span class="icon">🚀</span>
+                                <div class="list-text">
+                                    <strong>Role:</strong> Full Stack Developer focused on secure & scalable systems.
+                                </div>
+                            </li>
+                            <li>
+                                <span class="icon">🛡️</span>
+                                <div class="list-text">
+                                    <strong>Core Interests:</strong> Cloud Architecture, Cybersecurity, and Backend
+                                    Logic.
+                                </div>
+                            </li>
+                            <li>
+                                <span class="icon">🧩</span>
+                                <div class="list-text">
+                                    <strong>Problem Solving:</strong> I enjoy optimizing complex data flows and
+                                    hardening system security.
+                                </div>
+                            </li>
+                            <li>
+                                <span class="icon">⚡</span>
+                                <div class="list-text">
+                                    <strong>Current Focus:</strong> Deepening knowledge in Advanced Threat Detection and
+                                    Microservices.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: My Journey (Timeline) -->
+            <section class="about-section scroll-reveal">
+                <h2 class="section-title">MY JOURNEY</h2>
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
+
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item left">
+                        <div class="timeline-content glass-panel">
+                            <span class="date">2021 - 2023</span>
+                            <h3>Foundations</h3>
+                            <p>Started with Python and Networking fundamentals. Built first CLI tools and scripts.</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item right">
+                        <div class="timeline-content glass-panel">
+                            <span class="date">2023 - 2024</span>
+                            <h3>Web & Database</h3>
+                            <p>Mastered MERN stack. Developed full-stack applications with focus on REST APIs.</p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item left">
+                        <div class="timeline-content glass-panel">
+                            <span class="date">2024 - Present</span>
+                            <h3>Advanced Security</h3>
+                            <p>Specializing in Cyber Security, penetration testing, and secure coding practices.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Certifications -->
+            <section class="about-section scroll-reveal">
+                <h2 class="section-title">CERTIFICATIONS</h2>
+                <div class="cert-grid">
+                    <!-- Cert 1 -->
+                    <div class="cert-card glass-panel">
+                        <div class="cert-icon">📜</div>
+                        <h3>CYBER SECURITY AND PRIVACY</h3>
+                        <p class="issuer">NPTEL</p>
+                    </div>
+                    <!-- Cert 2 -->
+                    <div class="cert-card glass-panel">
+                        <div class="cert-icon">☁️</div>
+                        <h3>AWS Solutions Architect</h3>
+                        <p class="issuer">Amazon Web Services</p>
+                    </div>
+                    <!-- Cert 3 -->
+                    <div class="cert-card glass-panel">
+                        <div class="cert-icon">🐍</div>
+                        <h3>Python Professional</h3>
+                        <p class="issuer">Python Institute</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: Tech Stack -->
+            <section class="about-section scroll-reveal">
+                <h2 class="section-title">TECH ARSENAL</h2>
+                <div class="tech-stack-container glass-panel">
+
+                    <div class="tech-category">
+                        <h3>LANGUAGES</h3>
+                        <div class="tech-list">
+                            <span class="tech-pill btn-3d"><i class="devicon-python-plain colored"></i> Python</span>
+                            <span class="tech-pill btn-3d"><i class="devicon-javascript-plain colored"></i>
+                                JavaScript</span>
+                            <span class="tech-pill btn-3d"><i class="devicon-azuresqldatabase-plain colored"></i>
+                                SQL</span>
+                        </div>
+                    </div>
+
+                    <div class="tech-category">
+                        <h3>FRAMEWORKS</h3>
+                        <div class="tech-list">
+                            <span class="tech-pill"><i class="devicon-flask-original"></i> Flask</span>
+                            <span class="tech-pill"><i class="devicon-django-plain"></i> Django</span>
+                        </div>
+                    </div>
+
+                    <div class="tech-category">
+                        <h3>TOOLS & SEC</h3>
+                        <div class="tech-list">
+                            <span class="tech-pill"><i class="devicon-docker-plain colored"></i> Docker</span>
+                            <span class="tech-pill"><i class="devicon-git-plain colored"></i> Git</span>
+                            <span class="tech-pill">Burp Suite</span>
+                            <span class="tech-pill"><i class="devicon-linux-plain"></i> Kali Linux</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <!-- PROJECTS SECTION -->
+            <section id="projects" class="projects-section scroll-reveal">
+                <section class="page-header">
+                    <h1 class="glitch-text" data-text="PROJECTS">PROJECTS</h1>
+                    <p class="subtitle">CASE STUDIES • SYSTEM DESIGN • SECURITY</p>
+                </section>
+
+                <!-- Project 1 -->
+                <div class="project-panel glass-panel">
+                    <div class="project-header">
+                        <h2>Secure File Sharing System</h2>
+                        <span class="project-tag completed">COMPLETED</span>
+                    </div>
+
+                    <p class="project-summary">
+                        A backend-focused secure file sharing platform emphasizing encryption,
+                        access control, and integrity validation.
+                    </p>
+
+                    <div class="project-flow">
+                        <div class="flow-block">
+                            <h4>PROBLEM</h4>
+                            <p>Traditional file-sharing systems lack proper access isolation and
+                                integrity verification.</p>
+                        </div>
+
+                        <div class="flow-block">
+                            <h4>SOLUTION</h4>
+                            <p>Implemented role-based access, hashing for integrity checks,
+                                and secure upload/download pipelines.</p>
+                        </div>
+
+                        <div class="flow-block">
+                            <h4>IMPACT</h4>
+                            <p>Improved data trust, reduced unauthorized access vectors,
+                                and hardened backend workflows.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-footer">
+                        <div class="tech-stack">
+                            <span class="tech-pill">Python</span>
+                            <span class="tech-pill">Flask</span>
+                            <span class="tech-pill">JWT</span>
+                            <span class="tech-pill">SHA-256</span>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="#" class="cyber-btn small">GitHub</a>
+                            <a href="#" class="cyber-btn small secondary">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-panel glass-panel">
+                    <div class="project-header">
+                        <h2>E-Commerce Microservices Architecture</h2>
+                        <span class="project-tag in-progress">IN PROGRESS</span>
+                    </div>
+
+                    <p class="project-summary">
+                        A scalable microservices-based e-commerce backend focusing on service
+                        isolation and API reliability.
+                    </p>
+
+                    <div class="project-flow">
+                        <div class="flow-block">
+                            <h4>PROBLEM</h4>
+                            <p>Monolithic systems struggle with scalability and fault isolation.</p>
+                        </div>
+
+                        <div class="flow-block">
+                            <h4>SOLUTION</h4>
+                            <p>Designed independent services for auth, catalog, and orders,
+                                communicating via REST APIs.</p>
+                        </div>
+
+                        <div class="flow-block">
+                            <h4>IMPACT</h4>
+                            <p>Improved scalability, easier maintenance, and better deployment
+                                flexibility.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-footer">
+                        <div class="tech-stack">
+                            <span class="tech-pill">Node.js</span>
+                            <span class="tech-pill">Docker</span>
+                            <span class="tech-pill">MongoDB</span>
+                            <span class="tech-pill">REST API</span>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="#" class="cyber-btn small">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-panel glass-panel">
+                    <div class="project-header">
+                        <h2>Network Traffic Analyzer</h2>
+                        <span class="project-tag experimental">EXPERIMENTAL</span>
+                    </div>
+
+                    <p class="project-summary">
+                        A Python-based network traffic analyzer designed to detect suspicious
+                        patterns and anomalies.
+                    </p>
+
+                    <div class="project-flow">
+                        <div class="flow-block">
+                            <h4>PROBLEM</h4>
+                            <p>Raw network logs are difficult to interpret and monitor manually.</p>
+                        </div>
+
+                        <div class="flow-block">
+                            <h4>SOLUTION</h4>
+                            <p>Parsed packets and logs to identify anomalies using rule-based logic.</p>
+                        </div>
+
+                        <div class="flow-block">
+                            <h4>IMPACT</h4>
+                            <p>Improved visibility into network behavior and early threat detection.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-footer">
+                        <div class="tech-stack">
+                            <span class="tech-pill">Python</span>
+                            <span class="tech-pill">Wireshark</span>
+                            <span class="tech-pill">TCP/IP</span>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="#" class="cyber-btn small">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- CONTACT SECTION -->
+            <section id="contact" class="contact-section scroll-reveal">
+                <section class="page-header">
+                    <h1 class="glitch-text" data-text="CONTACT">CONTACT</h1>
+                    <p class="subtitle">COMMUNICATION • HUB</p>
+                </section>
+
+                <div class="contact-hub glass-panel">
+                    <div class="hub-grid">
+
+                        <!-- Contact Pod 1: Email -->
+                        <div class="contact-pod">
+                            <div class="pod-icon">📧</div>
+                            <h3>EMAIL</h3>
+                            <p>mohammed@example.com</p>
+                            <a href="mailto:mohammed@example.com" class="cyber-btn small">SEND MESSAGE</a>
+                        </div>
+
+                        <!-- Contact Pod 2: Phone -->
+                        <div class="contact-pod">
+                            <div class="pod-icon">📱</div>
+                            <h3>PHONE</h3>
+                            <p>+91 98765 43210</p>
+                            <a href="tel:+919876543210" class="cyber-btn small">CALL NOW</a>
+                        </div>
+
+                        <!-- Contact Pod 3: Socials -->
+                        <div class="contact-pod">
+                            <div class="pod-icon">🌐</div>
+                            <h3>SOCIALS</h3>
+                            <div class="social-uplinks">
+                                <a href="https://github.com/mohammed" target="_blank" class="social-btn"
+                                    data-label="GITHUB">
+                                    <span class="icon">📁</span>
+                                </a>
+                                <a href="https://linkedin.com/in/mohammed" target="_blank" class="social-btn"
+                                    data-label="LINKEDIN">
+                                    <span class="icon">🔗</span>
+                                </a>
+                                <a href="https://instagram.com/mohammed" target="_blank" class="social-btn"
+                                    data-label="INSTAGRAM">
+                                    <span class="icon">📸</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="hub-footer">
+                        <p class="status-line">>&nbsp;SYSTEM STATUS:&nbsp;<span class="typing">ONLINE • RADIATING
+                                CONNECTION</span></p>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="glass-footer">
+                <p>&copy; 2026 Mohammed Abbas. Built with <span style="color: var(--primary-color);">Code</span> & <span
+                        style="color: var(--secondary-color);">Passion</span>.</p>
+            </footer>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
