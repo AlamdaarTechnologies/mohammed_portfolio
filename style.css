@@ -22,8 +22,8 @@
 }
 
 body {
-    background: url('space bg.png') no-repeat center center fixed;
-    background-size: cover;
+    background: #000000;
+    /* Clean black background */
     color: var(--text-color);
     font-family: var(--font-body);
     overflow-x: hidden;
@@ -152,36 +152,190 @@ body {
 }
 
 /* --- Hero Section Fixes --- */
+/* --- Hero Section Fixes --- */
 .hero-section {
-    height: 100vh;
-    min-height: 100dvh;
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
     position: relative;
-    background: radial-gradient(circle at center, rgba(10, 10, 10, 0) 0%, rgba(5, 5, 5, 1) 100%);
+    padding: 0 5%;
     overflow: hidden;
-    /* CRITICAL: Clips the mirror effect so it doesn't widen the page */
 }
 
-.hero-content {
-    max-width: 900px;
-    width: 90%;
+.hero-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    z-index: 2;
 }
 
-.hero-content h1 {
+.hero-text {
+    flex: 1;
+    max-width: 600px;
+    text-align: left;
+}
+
+.hero-text h1 {
     font-family: var(--font-heading);
-    /* Fluid Typography: Scales smoothly from 2.5rem (mobile) to 5rem (desktop) */
-    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-size: clamp(3rem, 6vw, 5rem);
     font-weight: 900;
-    /* ... existing styles ... */
+    margin-bottom: 20px;
 }
-
-/* ... existing styles ... */
 
 /* --- Mobile Breakpoint Adjustments --- */
+@media (max-width: 900px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 60px;
+        padding-top: 100px;
+        /* Space for navbar */
+    }
+
+    .hero-text {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .radar-module {
+        width: 280px;
+        height: 280px;
+    }
+}
+
+/* --- Radar Module --- */
+.hero-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.radar-module {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.radar-screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    background: radial-gradient(circle, rgba(0, 20, 20, 0.4), transparent 70%);
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.05);
+    overflow: hidden;
+}
+
+.radar-grid {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background:
+        radial-gradient(transparent 69%, rgba(0, 243, 255, 0.1) 70%, transparent 71%),
+        radial-gradient(transparent 49%, rgba(0, 243, 255, 0.1) 50%, transparent 51%),
+        radial-gradient(transparent 29%, rgba(0, 243, 255, 0.1) 30%, transparent 31%),
+        linear-gradient(0deg, transparent 49.5%, rgba(0, 243, 255, 0.1) 50%, transparent 50.5%),
+        linear-gradient(90deg, transparent 49.5%, rgba(0, 243, 255, 0.1) 50%, transparent 50.5%);
+}
+
+.radar-beam {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg,
+            transparent 0deg,
+            rgba(0, 243, 255, 0.05) 60deg,
+            rgba(0, 243, 255, 0.4) 90deg,
+            transparent 90.5deg);
+    animation: radarScan 8s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes radarScan {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Blips */
+.blip {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    box-shadow: 0 0 8px var(--primary-color);
+    opacity: 0;
+    animation: blipFade 2.5s ease-out forwards;
+}
+
+.blip.warn {
+    background: #ffb400;
+    box-shadow: 0 0 8px #ffb400;
+}
+
+.blip.danger {
+    background: #ff3333;
+    box-shadow: 0 0 10px #ff0000;
+}
+
+@keyframes blipFade {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    20% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Radar UI / Logs */
+.radar-ui {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.radar-header {
+    font-family: monospace;
+    font-size: 0.7rem;
+    color: var(--primary-color);
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    opacity: 0.7;
+}
+
+.radar-logs {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: #4CAF50;
+    min-height: 20px;
+}
+
 @media (max-width: 300px) {
     body {
         background-image: url('galaxy-night-landscape.jpg');
@@ -225,49 +379,47 @@ body {
     }
 }
 
-/* --- Rotating Earth Element (Desktop Only) --- */
-@media (min-width: 1024px) {
-    .earth-container {
-        position: fixed;
-        top: 50%;
-        right: -15%;
-        /* Show 'Half Earth' on the right */
-        transform: translateY(-50%);
-        width: 80vh;
-        height: 80vh;
+/* --- ECG Background Animation --- */
+.ecg-container {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    transform: translateY(-50%);
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.15;
+    /* Subtle visibility */
+    overflow: hidden;
+}
 
-        /* The Globe Effect */
-        background: url('2d night earth.png');
-        background-size: 200% 100%;
-        /* Make texture twice as wide for seamless looping */
-        border-radius: 50%;
-        /* Make it circular */
+.ecg-svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 2px var(--primary-color));
+}
 
-        /* Inner Shadow for 3D Sphere look - Night side removed as requested */
-        box-shadow: inset -10px 0 25px 8px rgba(255, 255, 255, 0.4),
-            /* stronger Rim light */
-            0 0 60px rgba(0, 243, 255, 0.6);
-        /* Brighter Outer glow */
+.ecg-line {
+    fill: none;
+    stroke: var(--primary-color);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    /* Animation essentially slides the dash pattern to look like a pulse moving or line drawing */
+    stroke-dasharray: 1000;
+    /* length of the path roughly */
+    stroke-dashoffset: 1000;
+    animation: ecgFlow 4s linear infinite;
+}
 
-        /* Brighten the dark texture */
-        filter: brightness(1.3) contrast(1.1);
-
-        z-index: -1;
-        opacity: 1;
-
-        /* The Rotation */
-        animation: rotateGlobe 60s linear infinite;
+@keyframes ecgFlow {
+    0% {
+        stroke-dashoffset: 1000;
     }
 
-    @keyframes rotateGlobe {
-        0% {
-            background-position: 0 0;
-        }
-
-        100% {
-            background-position: 200% 0;
-            /* Slide texture to the right for opposite spin */
-        }
+    100% {
+        stroke-dashoffset: 0;
     }
 }
 
@@ -322,19 +474,7 @@ body {
     box-shadow: 0 0 20px var(--primary-color);
 }
 
-/* --- Mirror/Reflection Effect --- */
-.mirror-surface {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 150px;
-    background: linear-gradient(to top, rgba(0, 243, 255, 0.1), transparent);
-    transform: perspective(500px) rotateX(60deg) scale(1.5);
-    filter: blur(50px);
-    z-index: -1;
-    pointer-events: none;
-}
+/* --- Mirror/Reflection Effect Removed --- */
 
 /* --- Animations --- */
 @keyframes glitch-anim {
