@@ -17,8 +17,16 @@
 </head>
 
 <body>
-    <div class="earth-container"></div>
-    <div class="stars-bg"></div>
+    <!-- ECG Background Animation -->
+    <div class="ecg-container">
+        <svg class="ecg-svg" viewBox="0 0 1000 200" preserveAspectRatio="none">
+            <!-- Continuous ECG Line Path -->
+            <!-- Flat line -> P wave -> QRS complex -> T wave -> Flat line -->
+            <path class="ecg-line"
+                d="M0 100 L100 100 L110 90 L120 100 L130 100 L140 130 L150 40 L160 140 L170 100 L180 100 L190 90 L200 100 L1000 100"
+                vector-effect="non-scaling-stroke" />
+        </svg>
+    </div>
     <!-- Loading Screen -->
     <div id="loader-wrapper">
         <div class="loader">
@@ -57,20 +65,38 @@
 
     <main>
         <section id="home" class="hero-section">
-            <div class="hero-content">
-                <h1 class="glitch-text" data-text="MOHAMMED">MOHAMMED</h1>
-                <p class="tagline"><span id="tagline-text">FULL STACK <span class="highlight">DEVELOPER</span></span>
-                </p>
-                <div class="cta-container">
-                    <a href="#projects" class="cyber-btn">
-                        <span class="btn-content">VIEW WORK</span>
-                        <span class="btn-glitch"></span>
-                    </a>
+            <div class="hero-container">
+                <!-- Left Side: Text Content -->
+                <div class="hero-text">
+                    <h1 class="glitch-text" data-text="MOHAMMED">MOHAMMED</h1>
+                    <p class="tagline"><span id="tagline-text">FULL STACK <span
+                                class="highlight">DEVELOPER</span></span>
+                    </p>
+                    <div class="cta-container">
+                        <a href="#projects" class="cyber-btn">
+                            <span class="btn-content">VIEW WORK</span>
+                            <span class="btn-glitch"></span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Side: Security Radar -->
+                <div class="hero-visual">
+                    <div class="radar-module">
+                        <div class="radar-screen">
+                            <div class="radar-grid"></div>
+                            <div class="radar-beam"></div>
+                            <div class="radar-blips"></div>
+                        </div>
+                        <div class="radar-ui">
+                            <div class="radar-header">THREAT_SCAN_V2.0</div>
+                            <div class="radar-logs">
+                                <span class="log-entry" id="radar-log-text">> INITIALIZING_SCAN...</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <!-- Mirror/Reflection decorative element -->
-            <div class="mirror-surface"></div>
         </section>
 
         <!-- ABOUT SECTION INTEGRATION -->
