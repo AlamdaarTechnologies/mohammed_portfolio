@@ -131,5 +131,72 @@ window.addEventListener('load', () => {
             setTimeout(() => loader.remove(), 1000);
         }, 1500); // reduced from 2000 for snappier feel while still showing off
     }
-});
 
+    // --- Radar System Logic ---
+    const blipContainer = document.querySelector('.radar-blips');
+    const logText = document.getElementById('radar-log-text');
+
+    if (blipContainer && logText) {
+        // Blip Generator
+        const createBlip = () => {
+            const blip = document.createElement('div');
+            blip.classList.add('blip');
+
+            // Random position within circle
+            const angle = Math.random() * 360;
+            const distance = Math.random() * 40 + 10; // 10% to 50% from center
+            const x = 50 + distance * Math.cos(angle * Math.PI / 180);
+            const y = 50 + distance * Math.sin(angle * Math.PI / 180);
+
+            blip.style.left = `${x}%`;
+            blip.style.top = `${y}%`;
+
+            // Random type
+            const rand = Math.random();
+            if (rand > 0.95) blip.classList.add('danger');
+            else if (rand > 0.8) blip.classList.add('warn');
+
+            blipContainer.appendChild(blip);
+
+            // Cleanup
+            setTimeout(() => blip.remove(), 2500);
+        };
+
+        // Create blips randomly
+        setInterval(() => {
+            if (Math.random() > 0.3) createBlip();
+        }, 1500);
+
+
+        // Security Logs
+        const logs = [
+            "[SCAN] NETWORK_TRAFFIC... OK",
+            "[CHK] PORT_443_SECURE",
+            "[SYS] ENCRYPTION_ACTIVE",
+            "[SCAN] NO_MALWARE_DETECTED",
+            "[WARN] SUSPICIOUS_PACKET_DROPPED",
+            "[SYS] INTEGRITY_VERIFIED",
+            "[CMD] ROOT_ACCESS_DENIED",
+            "[NET] LATENCY_12MS... STABLE"
+        ];
+        let logIndex = 0;
+
+        const updateLog = () => {
+            logText.style.opacity = 0;
+            setTimeout(() => {
+                logIndex = (logIndex + 1) % logs.length;
+                logText.textContent = logs[logIndex];
+                if (logs[logIndex].includes("WARN")) {
+                    logText.style.color = "#ffb400";
+                } else if (logs[logIndex].includes("DENIED")) {
+                    logText.style.color = "#ff3333";
+                } else {
+                    logText.style.color = "#4CAF50";
+                }
+                logText.style.opacity = 1;
+            }, 500);
+        };
+
+        setInterval(updateLog, 3000);
+    }
+});
